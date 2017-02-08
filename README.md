@@ -25,4 +25,4 @@ TODO LIST
 
 ========================
 
-![alt tag](https://github.com/zancos/TamerDB/tree/master/resources)
+![Tamer Database](https://github.com/zancos/TamerDB/tree/master/resources/ui_example_github.png)
