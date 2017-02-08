@@ -26,3 +26,5 @@ TODO LIST
 ========================
 
 ![Tamer Database](https://github.com/zancos/TamerDB/tree/master/resources/ui_example_github.png)
+
+![Alt text](resources/ui_example_github.png?raw=true "Title")
