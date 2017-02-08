@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include <QDebug>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -9,16 +10,14 @@ ui(new Ui::MainWindow)
 
 	setWindowTitle(tr("Tamer Database"));
 
-	//QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-	//QSqlDatabase db;
-	//db.addDatabase("QMYSQL");
-	//db.setHostName("192.168.10.146");
-	//db.setDatabaseName("");
-	//db.setUserName("root");
-	//db.setPassword("");
-	//bool ok = db.open();
-
 	QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+	db.setHostName("192.168.75.128");
+	db.setDatabaseName("tamerdb");
+	db.setUserName("root");
+	db.setPassword("");
+	bool ok = db.open();
+	db.close();
+	qDebug() << "Conexión db:" << ok;
 
 
 }

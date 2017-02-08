@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
 	QDesktopWidget myDesktop;
 	MainWindow w;
 
-
 	// Core Application
 	QCoreApplication::setApplicationName("Tamer Database");
 	QCoreApplication::setApplicationVersion("0.0.1");
@@ -41,6 +40,7 @@ int main(int argc, char *argv[])
 			settings->setValue("dbPass", "");
 			settings->setValue("dbName", "TamerDB");
 			settings->endGroup();
+			// qDebug() << settings->value("dbHost");
 		}
 		else
 		{
