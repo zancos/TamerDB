@@ -16,6 +16,8 @@ TODO LIST
 - [ ] init model for DB for users
 - [ ] init model for DB for bils
 
+
+==========================================
 - [ ] Export/Save bill to PDF function
 - [ ] determine and add Bill class members
 - [ ] determine and add User class members
