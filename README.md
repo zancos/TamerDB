@@ -22,3 +22,7 @@ TODO LIST
 - [ ] determine and add Bill class members
 - [ ] determine and add User class members
 - [ ] add roles for
+
+========================
+
+![alt tag](https://github.com/zancos/TamerDB/tree/master/resources)
