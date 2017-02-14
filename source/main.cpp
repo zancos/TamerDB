@@ -5,6 +5,9 @@
 #include <QSettings>
 #include <iostream>
 #include <QDebug>
+#include <QtPlugin>
+
+//Q_IMPORT_PLUGIN(qsqlmysql)
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +20,6 @@ int main(int argc, char *argv[])
 	QCoreApplication::setApplicationVersion("0.0.1");
 	QCoreApplication::setOrganizationName("Ploding");
 	QCoreApplication::setOrganizationDomain("ploding.com");
-
 
 	// Config file
 	QSettings *settings;
@@ -49,20 +51,7 @@ int main(int argc, char *argv[])
 	}
 
 
-	// Look for Area and dimensions
-	int desktopArea = QApplication::desktop()->width() * QApplication::desktop()->height();
-	int widgetArea = w.width() * w.height();
-	//desktopArea = myDesktop.width() * myDesktop.height();
-	//int avDesktopArea = myDesktop.availableGeometry.height() * myDesktop.availableGeometry.width();
-
-	if (((float)widgetArea / (float)desktopArea) < 0.75f)
-		w.show();
-	else
-		w.showMaximized();
-
-	
-
-	
+	w.show();
 
 	return a.exec();
 }

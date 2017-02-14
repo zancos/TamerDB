@@ -1,6 +1,13 @@
 project(TamerDB)
 add_definitions(-DUNICODE)
 
+
+# // Debug variable.
+#    True = cmake debug mode enabled
+#    False = cmake debug mode disabled
+set(DEBUG_FLAG TRUE)
+
+
 if (UNIX)
     set(CMAKE_PREFIX_PATH /opt/Qt/5.7/gcc_64)
     # set(CMAKE_PREFIX_PATH /opt/Eigen-3.2.4; /opt/Qt/5.7/gcc_64)
@@ -46,3 +53,12 @@ SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${ALL_HDR}")
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PREFIX "${GLOBAL_PROJECT_NAME}")
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets Qt5::OpenGL Qt5::Sql ${OPENGL_LIBRARIES})
+
+
+# CMAKE debug options
+if(DEBUG_FLAG)
+get_cmake_property(_variableNames VARIABLES)
+foreach (_variableName ${_variableNames})
+    message(STATUS "${_variableName}=${${_variableName}}")
+endforeach()
+endif(DEBUG_FLAG)

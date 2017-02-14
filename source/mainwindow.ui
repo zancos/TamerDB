@@ -57,7 +57,7 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>214</width>
+      <width>220</width>
       <height>44</height>
      </rect>
     </property>
@@ -76,7 +76,7 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
+     <item row="0" column="2">
       <widget class="QLabel" name="label_24">
        <property name="font">
         <font>
@@ -90,12 +90,25 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>300</x>
       <y>10</y>
       <width>158</width>
       <height>25</height>
@@ -110,7 +123,7 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="botonSiguiente">
        <property name="text">
         <string>Siguiente</string>
        </property>
@@ -481,23 +494,6 @@
      </item>
     </layout>
    </widget>
-   <zorder>line</zorder>
-   <zorder>checkBox</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>label_19</zorder>
-   <zorder>line_2</zorder>
-   <zorder>line_3</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>label_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -508,13 +504,20 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuConfiguraci_n">
+   <widget class="QMenu" name="menuConfiguracion">
     <property name="title">
      <string>Configuración</string>
     </property>
-    <addaction name="actionConfiguraci_n"/>
+    <addaction name="actionConfiguracion"/>
    </widget>
-   <addaction name="menuConfiguraci_n"/>
+   <widget class="QMenu" name="menuAcercade">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionAcercade"/>
+   </widget>
+   <addaction name="menuConfiguracion"/>
+   <addaction name="menuAcercade"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -525,9 +528,14 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionConfiguraci_n">
+  <action name="actionConfiguracion">
    <property name="text">
-    <string>Configuración</string>
+    <string>Configuración DB</string>
+   </property>
+  </action>
+  <action name="actionAcercade">
+   <property name="text">
+    <string>Acerca de...</string>
    </property>
   </action>
  </widget>
