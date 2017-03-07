@@ -13,13 +13,14 @@ ui(new Ui::MainWindow)
 	setWindowTitle(tr("Tamer Database"));
 
 	QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-	db.setHostName("192.168.75.128");
-	db.setDatabaseName("tamerdb");
-	db.setUserName("root");
-	db.setPassword("");
+	db.setHostName("bbdd.ploding.com");
+	db.setDatabaseName("ddb91739");
+	db.setUserName("ddb91739");
+	db.setPassword("k%BiO2PmOc;l");
 	bool ok = db.open();
 	qDebug() << "Conexión db:" << ok;
 	db.close();
+	
 }
 
 MainWindow::~MainWindow()

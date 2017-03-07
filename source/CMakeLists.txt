@@ -1,32 +1,4 @@
-project(TamerDB)
-add_definitions(-DUNICODE)
 
-
-# // Debug variable.
-#    True = cmake debug mode enabled
-#    False = cmake debug mode disabled
-set(DEBUG_FLAG TRUE)
-
-
-if (UNIX)
-    set(CMAKE_PREFIX_PATH /opt/Qt/5.7/gcc_64)
-    # set(CMAKE_PREFIX_PATH /opt/Eigen-3.2.4; /opt/Qt/5.7/gcc_64)
-elseif(WIN32 AND MSVC)
-    set(CMAKE_PREFIX_PATH C:/Workspace/libs/Eigen-3.2.4; C:/Workspace/libs/Qt-5.7/msvc2013_64; C:/Workspace/libs/glm-0.9.8.3/glm/cmake)
-else(WIN32 AND MSVC)
-    set(CMAKE_PREFIX_PATH C:/Workspace/libs/Eigen-3.2.4; C:/Workspace/libs/Qt-5.7/mingw53_32; C:/Workspace/libs/glm-0.9.8.3/glm/cmake)
-endif(UNIX)
-
-find_package(OpenGL REQUIRED)
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Gui REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5OpenGL REQUIRED)
-find_package(Qt5Sql REQUIRED)
-# find_package(GLM REQUIRED)
-
-# Currently does not works for UNIX option
-# find_package(Eigen REQUIRED CONFIG)
 
 file(GLOB HDRS_FILES *.h)
 file(GLOB HDRS_IMPL_FILES *.hpp)
@@ -52,13 +24,5 @@ LIST(APPEND ALL_HDR "${HDRS_IMPL_FILES}")
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${ALL_HDR}")
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PREFIX "${GLOBAL_PROJECT_NAME}")
 
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets Qt5::OpenGL Qt5::Sql ${OPENGL_LIBRARIES})
-
-
-# CMAKE debug options
-if(DEBUG_FLAG)
-get_cmake_property(_variableNames VARIABLES)
-foreach (_variableName ${_variableNames})
-    message(STATUS "${_variableName}=${${_variableName}}")
-endforeach()
-endif(DEBUG_FLAG)
+#target_link_libraries (${Boost_FILESYSTEM_ARY} ${Boost_SYSTEM_LIBRARY})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets Qt5::OpenGL Qt5::Sql ${OPENGL_LIBRARIES} ${Boost_LIBRARIES})
